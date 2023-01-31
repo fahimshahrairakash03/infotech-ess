@@ -7,9 +7,7 @@ import { useState } from "react";
 
 function App() {
   const [data, setData] = useState(null);
-  const handleSubmit = () => {
-    console.log(data);
-  };
+  const handleSubmit = () => {};
   return (
     <div className="App">
       <div className="dragcompo">
@@ -27,6 +25,8 @@ function App() {
           style={{ width: "70%" }}
         >
           <p>Place the component</p>
+
+          <h2 style={{ marginTop: "100px" }}>I need a {data}</h2>
           <button className="submit-btn" onClick={handleSubmit}>
             Submit
           </button>
