@@ -1,23 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import Draggable from "react-draggable";
+import { FaBeer } from "react-icons/fa";
+import TextInput from "./components/TextInput";
+import { useState } from "react";
 
 function App() {
+  const [data, setData] = useState(null);
+  const handleSubmit = () => {
+    console.log(data);
+  };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+      <div className="dragcompo">
+        <div style={{ background: "gray", height: "100vh" }}>
+          <button>
+            <Draggable>
+              <TextInput setData={setData}></TextInput>
+            </Draggable>
+          </button>
+        </div>
+
+        <div
+          className="dropcomp"
+          onDragOver={(e) => this.onDragOver(e)}
+          style={{ width: "70%" }}
         >
-          Learn React
-        </a>
-      </header>
+          <p>Place the component</p>
+          <button className="submit-btn" onClick={handleSubmit}>
+            Submit
+          </button>
+        </div>
+      </div>
     </div>
   );
 }

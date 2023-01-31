@@ -6,6 +6,17 @@
   height: 40vmin;
   pointer-events: none;
 }
+.dragcompo {
+  display: flex;
+}
+.dropcomp {
+  position: relative;
+}
+.submit-btn {
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 20px;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
